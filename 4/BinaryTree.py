@@ -55,6 +55,26 @@ class Node:
     def createRandomTree(self, size, min_value, max_value):
         arr = [randint(min_value,max_value) for i in range(size)]
         return self.createTree(arr)
+    
+    def createRandomBalancedTree(self, size, min_value, max_value):
+        class SizeTooBigException(Exception):
+            
+            def __init__(self):
+                self.message = 'Size is bigger than range'
+                super().__init__(self.message)
+        if max_value-min_value+1 < size:
+            raise SizeTooBigException
+        s = set()
+        arr = []
+        for i in range(size):
+            n = randint(min_value,max_value)
+            while n in s:
+                n = randint(min_value,max_value)
+            s.add(n)
+            arr.append(n)
+        arr.sort()
+#         arr = sorted([randint(min_value,max_value) for i in range(size)])
+        return self.createTree(arr)
 
 # Taken from https://stackoverflow.com/a/54074933/6792562
     def display(self):
