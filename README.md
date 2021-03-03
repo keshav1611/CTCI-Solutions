@@ -1,2 +1,2 @@
 # CTCI-Solutions
-Chapter wise solutions from "Cracking the Coding Interview" by Gayle Laakmann Mcdowell in Python
+Chapter wise solutions from "Cracking the Coding Interview" by Gayle Laakmann Mcdowell in Python.
