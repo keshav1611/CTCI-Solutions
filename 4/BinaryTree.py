@@ -10,6 +10,7 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
+        self.parent = None
         
     def __str__(self):
         return '('+str(self.left)+':L ' + "V:" + str(self.data) + " R:" + str(self.right)+')'
@@ -49,7 +50,11 @@ class Node:
         mid = (h+l)//2
         root = Node(arr[mid])
         root.left = self.createTree(arr[l:mid])
+        if root.left:
+            root.left.parent = root
         root.right = self.createTree(arr[mid+1:h])
+        if root.right:
+            root.right.parent = root
         return root
 
     def createRandomTree(self, size, min_value, max_value):
