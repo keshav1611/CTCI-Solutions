@@ -56,6 +56,7 @@ class Node:
         arr = [randint(min_value,max_value) for i in range(size)]
         return self.createTree(arr)
 
+# Taken from https://stackoverflow.com/a/54074933/6792562
     def display(self):
         lines, *_ = self._display_aux()
         for line in lines:
